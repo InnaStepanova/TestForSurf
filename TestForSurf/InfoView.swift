@@ -59,6 +59,9 @@ private extension InfoView {
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+            
+            
             
             
         ])
@@ -70,6 +73,7 @@ private extension InfoView {
             button.setButtonTitle(title: label)
             button.addTarget(self, action: #selector(infoButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
             return button
     }
     

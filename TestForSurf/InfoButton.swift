@@ -43,8 +43,8 @@ private extension InfoButton {
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
             label.trailingAnchor.constraint(equalTo:trailingAnchor, constant: -24),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+//            label.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+//            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
         
     }
