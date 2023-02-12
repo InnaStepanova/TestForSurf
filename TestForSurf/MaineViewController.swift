@@ -54,10 +54,10 @@ class MaineViewController: UIViewController {
         return button
     }()
     
-//    private var buttonsCollectionView: UICollectionView = {
-//        let collection = UICollectionView()
-//        return collection
-//    }()
+    private lazy var infoButtonsView: InfoView = {
+        let view = InfoView()
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,9 +78,9 @@ extension MaineViewController {
         view.addSubview(contentView)
         view.addSubview(invitationLabel)
         view.addSubview(sendOrderBurron)
+        view.addSubview(infoButtonsView)
         contentView.addSubview(mainLabel)
         contentView.addSubview(descriptionLabel)
-//        contentView.addSubview(buttonsCollectionView)
     }
     
     private func layoutViews() {
@@ -88,9 +88,9 @@ extension MaineViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-//        buttonsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         invitationLabel.translatesAutoresizingMaskIntoConstraints = false
         sendOrderBurron.translatesAutoresizingMaskIntoConstraints = false
+        infoButtonsView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -101,7 +101,6 @@ extension MaineViewController {
             mainLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             mainLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            contentView.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -75),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -110,16 +109,17 @@ extension MaineViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: mainLabel.trailingAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: mainLabel.leadingAnchor),
             
-//            buttonsCollectionView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
-//            buttonsCollectionView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
-//            buttonsCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            buttonsCollectionView.heightAnchor.constraint(equalToConstant: 44),
+            infoButtonsView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
+            infoButtonsView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
+            infoButtonsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            infoButtonsView.heightAnchor.constraint(equalToConstant: 44),
             
             invitationLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
             invitationLabel.centerYAnchor.constraint(equalTo: sendOrderBurron.centerYAnchor),
             
             sendOrderBurron.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            sendOrderBurron.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58)
+            sendOrderBurron.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
+            sendOrderBurron.topAnchor.constraint(equalTo: infoButtonsView.bottomAnchor, constant: 32)
         ])
     }
     
